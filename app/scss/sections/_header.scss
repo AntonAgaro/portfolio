@@ -1,0 +1,27 @@
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid $main-color;
+    border-bottom: 1px solid $main-color;
+    &__menu {
+        width: 25%;
+        display: flex;
+        animation: slideFromLeft 1.5s;
+    }
+    &__menu-item {
+        margin-left: 20px;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 1.66;
+        text-transform: uppercase;
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    &__menu-link {
+        color: $main-color;
+    }
+}
+
