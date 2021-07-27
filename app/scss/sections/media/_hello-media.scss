@@ -1,0 +1,41 @@
+@media (max-width: 1440px) {
+    .wrapper {
+        &__item--text {
+            padding-bottom: 10px;
+        }
+        &__text-title {
+            font-size: 2rem;
+        }
+        &__btn {
+            min-width: 0;
+
+        }
+    }
+}
+
+@media (max-width: 940px) {
+    .wrapper {
+        &__item {
+            padding: 5px;
+        }
+        &__text-title, &__text-subtitle {
+            font-size: 1.3rem;
+        }
+        &__aboutme {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .wrapper {
+        &__item {
+            box-shadow: none;
+        }
+        &__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

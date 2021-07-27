@@ -1,38 +1,49 @@
 .hello {
-    margin-top: 100px;
+    // margin-top: 100px;
+    margin-top: 8%;
 }
 
 .myimg {
-    width: 50%;
-    animation: slideFromLeft 1.5s;
-    -webkit-box-shadow: -8px 6px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    -8px 6px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         -8px 6px 5px 0px rgba(50, 50, 50, 0.75);
+    width: 100%;
 }
 
 .wrapper {
-    &__text {
-        width: 50%;
-        height: 438.75px;
-        padding-left: 20px;
-        animation: slideFromRight 1.5s;
-        -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-        -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-        box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    &__item {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &--img {
+            animation: slideFromLeft 1.5s;
+            box-shadow: -8px 6px 5px 0px rgba(50, 50, 50, 0.75);        
+        }
+        &--text {
+            animation: slideFromRight 1.5s;
+            box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+        }
     }
     &__text-title {
-        font-size: 36px;
+        font-size: 3rem;
         margin-top: 20px;
     }
     &__text-subtitle {
-        font-size: 24px;
+        font-size: 2rem;
     }
     &__text-about {
         margin-top: 20px;
+        font-size: 1rem;
     }
     &__aboutme {
         margin-top: 10px;
-        font-size: 16px;
+        font-size: 1.2rem;
+    }
+    &__aboutme-link {
+        color: $main-color;
     }
     &__aboutme-span-answer {
         margin-left: 10px;
@@ -106,13 +117,15 @@
           }
     }
     &__btn-cv {
-        color: $main-color;
         position: relative;
         display: block;
         background-color: #FFF;
         &:hover {
             box-shadow: 7px 7px #2F4776;
             cursor: pointer;
+        }
+        a {
+            color: $main-color;
         }
     }
     &__btn-link {

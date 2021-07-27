@@ -1,19 +1,12 @@
+html {
+	font-size: 12px;
+}
 html,
 body {
 	height: 100%;
 	font-family: 'Poppins', sans-serif;
 	background-color: $back-color;
 	color: $main-color;
-}
-
-.wrapper {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: flex-start;
-	gap: 40px;
 }
 
 .main {
@@ -24,9 +17,10 @@ body {
 }
 
 .container{
-  width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 
 
