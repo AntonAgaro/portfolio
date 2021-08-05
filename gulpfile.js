@@ -1,4 +1,5 @@
 const {src, dest, watch, parallel, series } = require('gulp');
+const htmlMin = require('gulp-htmlmin'); 
 const scss   = require('gulp-sass');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
@@ -120,12 +121,21 @@ function styles() {
     .pipe(browserSync.stream())
 }
 
+function html() {
+  return src('dist/**/*.html')
+    .pipe(htmlMin({
+      collapseWhitespace: true,
+      removeComments: true
+    }))
+    .pipe(dest('dist'))
+}
+
 function build() {
   return src([
     'app/css/style.min.css',
     'app/fonts/**/*',
     // 'app/js/main.min.js',
-    'app/*.html'
+    'app/**/*.html'
   ], {base: 'app'})
   .pipe(dest('dist'))
 }
@@ -133,7 +143,7 @@ function build() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles); // ** - слежение за всеми папками и файлами, сколько угодно вложенностей
   // watch(['app/js/**/*.js','!app/js/main.min.js'], scripts);
-  watch(['app/*.html']).on('change', browserSync.reload);
+  watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/js/**/*.js', '!app/js/script.js'], buildJs);
 
 }
@@ -148,5 +158,5 @@ exports.buildJs = buildJs;
 exports.buildProdJs = buildProdJs;
 
 
-exports.build = series(cleanDist, images, build, buildProdJs);
+exports.build = series(cleanDist, images, build, buildProdJs, html);
 exports.default = parallel(buildJs, styles, browsersync, watching);
